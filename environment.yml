@@ -1,0 +1,38 @@
+name: topnet-ocr
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  # Core
+  - python=3.11
+  - pip
+
+  # Deep Learning & AI
+  - pytorch::pytorch::*[build=py311_0]
+  - pytorch::torchvision::*[build=py311_*]
+  - pytorch::pytorch-cuda=12.1
+  - numpy
+  - opencv
+  - pillow
+
+  # Development
+  - jupyter
+  - ipython
+  - pytest
+  - black
+  - flake8
+  - mypy
+
+  # pip dependencies
+  - pip
+  - pip::accelerate
+  - pip::transformers
+  - pip::pydantic
+  - pip::python-dotenv
+  - pip::sqlalchemy
+  - pip::psycopg2-binary
+  - pip::fastapi
+  - pip::uvicorn
+  - pip::dvc[all]
+  - pip::mlflow
+  - pip::tensorboard

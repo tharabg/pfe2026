@@ -1,0 +1,57 @@
+stages:
+  prepare:
+    cmd: python scripts/prepare_data.py
+    deps:
+      - data/raw
+    outs:
+      - data/processed:
+          cache: true
+
+  preprocess:
+    cmd: python scripts/preprocess.py
+    deps:
+      - data/processed
+    outs:
+      - data/preprocessed:
+          cache: false
+
+  train_classifier:
+    cmd: python scripts/train_classifier.py
+    deps:
+      - data/preprocessed
+      - src/classification.py
+    params:
+      - train.classifier_model
+      - train.batch_size
+      - train.epochs
+    outs:
+      - models/document_classifier.pth:
+          cache: true
+    metrics:
+      - metrics/classifier_metrics.json:
+          cache: false
+
+  train_ocr:
+    cmd: python scripts/train_ocr.py
+    deps:
+      - data/preprocessed
+      - src/ocr.py
+    params:
+      - train.ocr_backend
+      - train.ocr_epochs
+    outs:
+      - models/ocr_model.pth:
+          cache: true
+    metrics:
+      - metrics/ocr_metrics.json:
+          cache: false
+
+  evaluate:
+    cmd: python scripts/evaluate.py
+    deps:
+      - models/document_classifier.pth
+      - models/ocr_model.pth
+      - data/processed
+    metrics:
+      - metrics/evaluation.json:
+          cache: false

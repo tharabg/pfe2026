@@ -1,0 +1,32 @@
+train:
+  classifier_model: "efficientnet_b0"
+  ocr_backend: "paddle"
+  batch_size: 32
+  epochs: 50
+  learning_rate: 1e-4
+  ocr_epochs: 100
+  optimizer: "adam"
+  loss_function: "cross_entropy"
+
+evaluation:
+  test_size: 0.2
+  val_size: 0.1
+  random_seed: 42
+
+model_registry:
+  classifier:
+    name: "document_classifier"
+    version: "v1"
+    source: "efficientnet_b0"
+  ocr:
+    name: "ocr_model"
+    version: "v1"
+    source: "paddle"
+  vlm:
+    name: "clip_vision_language"
+    version: "v1"
+    source: "openai/clip-vit-base-patch32"
+
+mlflow:
+  experiment_name: "topnet_ocr_experiments"
+  tracking_uri: "file:./mlruns"
