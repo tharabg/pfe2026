@@ -1,0 +1,262 @@
+{
+  "date": "2026-06-01T14:24:52.983976",
+  "author": "Ben Ghorbel Thara — PFE TOPNET",
+  "model": "TOPNET OCR Pipeline V4 (CLIP + VLM Qwen2.5vl + PaddleOCR + ELA)",
+  "dataset": "C:\\Users\\thara\\Desktop\\data_test",
+  "n_docs": 7,
+  "metrics": {
+    "total": 7,
+    "classification": {
+      "accuracy": 0.8571,
+      "accuracy_pct": "85.7%",
+      "per_type": {
+        "CIN": {
+          "TP": 2,
+          "FP": 0,
+          "FN": 1,
+          "TN": 4,
+          "precision": 1.0,
+          "recall": 0.6667,
+          "f1": 0.8
+        },
+        "FACTURE": {
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "TN": 6,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PASSEPORT": {
+          "TP": 1,
+          "FP": 0,
+          "FN": 0,
+          "TN": 6,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "CONTRAT": {
+          "TP": 2,
+          "FP": 0,
+          "FN": 0,
+          "TN": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "confusion": {
+        "CIN": {
+          "CIN": 2,
+          "UNKNOWN": 1
+        },
+        "CONTRAT": {
+          "CONTRAT": 2
+        },
+        "FACTURE": {
+          "FACTURE": 1
+        },
+        "PASSEPORT": {
+          "PASSEPORT": 1
+        }
+      }
+    },
+    "decision": {
+      "accuracy": 0.8571,
+      "accuracy_pct": "85.7%",
+      "TP": 3,
+      "FP": 0,
+      "FN": 1,
+      "TN": 3,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.25
+    },
+    "details": [
+      {
+        "file": "cin_2_rectofake.png",
+        "expected_type": "CIN",
+        "predicted_type": "CIN",
+        "type_correct": true,
+        "expected_decision": "REJECTED",
+        "actual_decision": "REJECTED",
+        "decision_correct": true
+      },
+      {
+        "file": "cin_fake.jpeg",
+        "expected_type": "CIN",
+        "predicted_type": "UNKNOWN",
+        "type_correct": false,
+        "expected_decision": "REJECTED",
+        "actual_decision": "REJECTED",
+        "decision_correct": true
+      },
+      {
+        "file": "cin_reel.jpg",
+        "expected_type": "CIN",
+        "predicted_type": "CIN",
+        "type_correct": true,
+        "expected_decision": "ACCEPTED",
+        "actual_decision": "ACCEPTED",
+        "decision_correct": true
+      },
+      {
+        "file": "contract_4G_5G_003_fake.png",
+        "expected_type": "CONTRAT",
+        "predicted_type": "CONTRAT",
+        "type_correct": true,
+        "expected_decision": "REJECTED",
+        "actual_decision": "ACCEPTED",
+        "decision_correct": false
+      },
+      {
+        "file": "contrat_reel.png.png",
+        "expected_type": "CONTRAT",
+        "predicted_type": "CONTRAT",
+        "type_correct": true,
+        "expected_decision": "ACCEPTED",
+        "actual_decision": "ACCEPTED",
+        "decision_correct": true
+      },
+      {
+        "file": "facture_real.png",
+        "expected_type": "FACTURE",
+        "predicted_type": "FACTURE",
+        "type_correct": true,
+        "expected_decision": "ACCEPTED",
+        "actual_decision": "ACCEPTED",
+        "decision_correct": true
+      },
+      {
+        "file": "passport_DEU_002_fake.png",
+        "expected_type": "PASSEPORT",
+        "predicted_type": "PASSEPORT",
+        "type_correct": true,
+        "expected_decision": "REJECTED",
+        "actual_decision": "REJECTED",
+        "decision_correct": true
+      }
+    ]
+  },
+  "timings": {
+    "Total": 121.5
+  },
+  "raw_results": [
+    {
+      "file": "cin_2_rectofake.png",
+      "action": "REJECTED",
+      "predicted_type": "CIN",
+      "clf_conf": 0.66,
+      "fraud_score": 0.557,
+      "ela_score": 0.585,
+      "risk_level": "HIGH",
+      "reason": "Document frauduleux détecté",
+      "time_total": 106.5,
+      "time_fraud": 0,
+      "time_clf": 0,
+      "time_ocr": 0,
+      "time_extract": 0,
+      "error": ""
+    },
+    {
+      "file": "cin_fake.jpeg",
+      "action": "REJECTED",
+      "predicted_type": "UNKNOWN",
+      "clf_conf": 0.0,
+      "fraud_score": 0.285,
+      "ela_score": 0.0,
+      "risk_level": "LOW",
+      "reason": "Type de document non reconnu",
+      "time_total": 93.1,
+      "time_fraud": 0,
+      "time_clf": 0,
+      "time_ocr": 0,
+      "time_extract": 0,
+      "error": ""
+    },
+    {
+      "file": "cin_reel.jpg",
+      "action": "ACCEPTED",
+      "predicted_type": "CIN",
+      "clf_conf": 0.385,
+      "fraud_score": 0.255,
+      "ela_score": 0.0,
+      "risk_level": "LOW",
+      "reason": "",
+      "time_total": 134.6,
+      "time_fraud": 0,
+      "time_clf": 0,
+      "time_ocr": 0,
+      "time_extract": 0,
+      "error": ""
+    },
+    {
+      "file": "contract_4G_5G_003_fake.png",
+      "action": "ACCEPTED",
+      "predicted_type": "CONTRAT",
+      "clf_conf": 0.7,
+      "fraud_score": 0.244,
+      "ela_score": 0.325,
+      "risk_level": "LOW",
+      "reason": "",
+      "time_total": 135.5,
+      "time_fraud": 0,
+      "time_clf": 0,
+      "time_ocr": 0,
+      "time_extract": 0,
+      "error": ""
+    },
+    {
+      "file": "contrat_reel.png.png",
+      "action": "ACCEPTED",
+      "predicted_type": "CONTRAT",
+      "clf_conf": 0.495,
+      "fraud_score": 0.285,
+      "ela_score": 0.0,
+      "risk_level": "LOW",
+      "reason": "",
+      "time_total": 110.3,
+      "time_fraud": 0,
+      "time_clf": 0,
+      "time_ocr": 0,
+      "time_extract": 0,
+      "error": ""
+    },
+    {
+      "file": "facture_real.png",
+      "action": "ACCEPTED",
+      "predicted_type": "FACTURE",
+      "clf_conf": 0.686,
+      "fraud_score": 0.244,
+      "ela_score": 0.325,
+      "risk_level": "LOW",
+      "reason": "",
+      "time_total": 135.6,
+      "time_fraud": 0,
+      "time_clf": 0,
+      "time_ocr": 0,
+      "time_extract": 0,
+      "error": ""
+    },
+    {
+      "file": "passport_DEU_002_fake.png",
+      "action": "REJECTED",
+      "predicted_type": "PASSEPORT",
+      "clf_conf": 0.665,
+      "fraud_score": 0.285,
+      "ela_score": 0.0,
+      "risk_level": "LOW",
+      "reason": "Validation métier échouée: Format MRZ invalide (doit être 44 caractères A-Z/0-9/<); Numéro passeport format invalide: CR0TJOPZ1",
+      "time_total": 134.9,
+      "time_fraud": 0,
+      "time_clf": 0,
+      "time_ocr": 0,
+      "time_extract": 0,
+      "error": ""
+    }
+  ]
+}

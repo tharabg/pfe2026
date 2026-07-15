@@ -1,0 +1,76 @@
+{
+  "date": "2026-07-15T00:50:02.577482",
+  "author": "Ben Ghorbel Thara — PFE TOPNET",
+  "model": "TOPNET OCR Pipeline V3 (TripleClassifier + PaddleOCR + BusinessFraudDetector)",
+  "dataset": "dataset\\test",
+  "distribution": {
+    "CIN": 95,
+    "CONTRAT": 50,
+    "FACTURE": 50
+  },
+  "n_docs": 195,
+  "n_errors": 1,
+  "metrics": {
+    "total": 194,
+    "correct": 80,
+    "accuracy": 0.4124,
+    "macro_f1": 0.5381,
+    "per_type": {
+      "CIN": {
+        "TP": 0,
+        "FP": 2,
+        "FN": 95,
+        "TN": 97,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "support": 95
+      },
+      "CONTRAT": {
+        "TP": 30,
+        "FP": 0,
+        "FN": 19,
+        "TN": 145,
+        "precision": 1.0,
+        "recall": 0.6122,
+        "f1": 0.7595,
+        "support": 49
+      },
+      "FACTURE": {
+        "TP": 50,
+        "FP": 17,
+        "FN": 0,
+        "TN": 127,
+        "precision": 0.7463,
+        "recall": 1.0,
+        "f1": 0.8547,
+        "support": 50
+      }
+    },
+    "confusion": {
+      "CIN": {
+        "UNKNOWN": 95
+      },
+      "CONTRAT": {
+        "CONTRAT": 30,
+        "FACTURE": 17,
+        "CIN": 2
+      },
+      "FACTURE": {
+        "FACTURE": 50
+      }
+    },
+    "doc_types": [
+      "CIN",
+      "CONTRAT",
+      "FACTURE"
+    ]
+  },
+  "timings": {
+    "Ocr": 10.83,
+    "Clf": 0.04,
+    "Fraud": 0.1,
+    "Extract": 0.0,
+    "Total": 9.89
+  }
+}

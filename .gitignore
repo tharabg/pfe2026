@@ -62,3 +62,34 @@ Thumbs.db
 
 # Docker
 docker-compose.override.yml
+# Data réelle - NE JAMAIS COMMIT
+data/real/
+data/synthetic/
+data/uploads/
+
+# Sauf les rapports d'analyse (anonymes)
+!data/reports/
+
+# Modèles entraînés
+*.pth
+*.pt
+*.h5
+*.pkl
+
+# Cache
+__pycache__/
+*.pyc
+.cache/
+
+# Environnements
+*.env
+.env
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# DB
+*.db
+*.sqlite

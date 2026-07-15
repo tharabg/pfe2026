@@ -1,0 +1,86 @@
+[
+  {
+    "file": "cin_2_rectofake.png",
+    "action": "REJECTED",
+    "type": "CIN",
+    "conf": 0.66,
+    "fraud": 0.557,
+    "ela": 0.585,
+    "risk": "HIGH",
+    "reason": "Document frauduleux détecté",
+    "time": 84.1,
+    "error": ""
+  },
+  {
+    "file": "cin_fake.jpeg",
+    "action": "REJECTED",
+    "type": "UNKNOWN",
+    "conf": 0.0,
+    "fraud": 0.285,
+    "ela": 0.0,
+    "risk": "LOW",
+    "reason": "Type de document non reconnu",
+    "time": 106.5,
+    "error": ""
+  },
+  {
+    "file": "cin_reel.jpg",
+    "action": "ACCEPTED",
+    "type": "CIN",
+    "conf": 0.385,
+    "fraud": 0.255,
+    "ela": 0.0,
+    "risk": "LOW",
+    "reason": "",
+    "time": 175.4,
+    "error": ""
+  },
+  {
+    "file": "contract_4G_5G_003_fake.png",
+    "action": "ACCEPTED",
+    "type": "CONTRAT",
+    "conf": 0.7,
+    "fraud": 0.244,
+    "ela": 0.325,
+    "risk": "LOW",
+    "reason": "",
+    "time": 200.9,
+    "error": ""
+  },
+  {
+    "file": "contrat_reel.png.png",
+    "action": "ACCEPTED",
+    "type": "CONTRAT",
+    "conf": 0.495,
+    "fraud": 0.285,
+    "ela": 0.0,
+    "risk": "LOW",
+    "reason": "",
+    "time": 131.9,
+    "error": ""
+  },
+  {
+    "file": "facture_real.png",
+    "action": "ACCEPTED",
+    "type": "FACTURE",
+    "conf": 0.686,
+    "fraud": 0.244,
+    "ela": 0.325,
+    "risk": "LOW",
+    "reason": "",
+    "time": 173.8,
+    "error": ""
+  },
+  {
+    "file": "passport_DEU_002_fake.png",
+    "action": "REJECTED",
+    "type": "PASSEPORT",
+    "conf": 0.665,
+    "fraud": 0.27,
+    "ela": 0.0,
+    "risk": "LOW",
+    "reason": "Validation métier échouée: Format MRZ invalide (doit être 44 caractères A-Z/0-9/<); Numéro passeport format invalide: CR0TJOPZ1",
+    "time": 178.8,
+    "error": ""
+  }
+]
